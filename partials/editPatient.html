@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Bootply.com - 85861</title>
+		<title>Edit Patient</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -81,7 +81,7 @@
 				<div class="panel-heading">
 				  <div class="panel-title">
 					<i class="glyphicon glyphicon-wrench pull-right"></i>
-					<h4>Submit Request</h4>
+					<h4>Edit Patient Info</h4>
 				  </div>
 				</div>
 				<div class="panel-body">
@@ -99,17 +99,43 @@
 						<input type="password" class="form-control" placeholder="Password">
 						
 					  </div>
-					</div>   
+					</div>
+					<hr>
+					<h4>Edit Contact Info</h4>
 					<div class="control-group">
-					  <label>Details</label>
+					  <label>Phone Number</label>
+					  <div class="controls">
+						<input type="text" class="form-control" placeholder="Enter Phone Number">
+					</div>
+					<div class="control-group">
+					  <label>Address</label>
+					  <div class="controls">
+						<input type="text" class="form-control" placeholder="Enter Address">
+					  </div>
+					</div> 
+					</div> 					
+					<div class="control-group">
+					  <label>Add Notes</label>
 					  <div class="controls">
 						<textarea class="form-control"></textarea>
 					  </div>
 					</div> 
 					<div class="control-group">
-					  <label>Select</label>
+					  <label>Select Phase of Care</label>
 					  <div class="controls">
-						<select class="form-control"><option>General Question</option><option>Server Issues</option><option>Billing Question</option></select>
+						<select class="form-control">
+						<option>Demographics</option>
+						<option>Candidacy Testing</option>
+						<option>Initial Surgical Consultation</option>
+						<option>Preoperative Visit</option>
+						<option>1 Week Postoperative Check</option>
+						<option>Activation (3 weeks)</option>
+						<option>1 month Audiometric Testing</option>  
+						<option>3 month Audiometric Testing</</option>
+						<option>6 month Audiometric Testing</</option>
+						<option>12 month Audiometric Testing</</option>
+						<option>24 month Audiometric Testing</</option>
+						</select>
 					  </div>
 					</div>    
 					<div class="control-group">
@@ -127,6 +153,21 @@
 				</div><!--/panel content-->
 			  </div><!--/panel-->
 			  
+			  <div class="tabbable"> <!-- Only required for left/right tabs -->
+					  <ul class="nav nav-tabs">
+						<li class="active"><a href="#/tab1" data-toggle="tab">Demographics</a></li>
+						<li><a href="#/tab2" data-toggle="tab">Candidacy</a></li>
+					  </ul>
+					  <div class="tab-content">
+						<div class="tab-pane active" id="tab1">
+						  <p>I'm in Section 1.</p>
+						</div>
+						<div class="tab-pane" id="tab2">
+						  <p>Howdy, I'm in Section 2.</p>
+						</div>
+					  </div>
+					</div>
+			
              <!--<div class="panel panel-default">
                   <div class="panel-heading"><h4>Processing Status</h4></div>
                   <div class="panel-body">
