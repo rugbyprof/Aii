@@ -6,12 +6,12 @@ myApp.config(function ($routeProvider) {
 
   $routeProvider.when('/', {
       controller: '',
-      templateUrl: 'home.html'
+      templateUrl: 'login.php'
   })
-  .when('/home',
+  .when('/login',
   {
       controller: '',
-      templateUrl: 'home.html'
+      templateUrl: 'login.php'
   })
   .when('/newPatient',
   {
@@ -32,9 +32,15 @@ myApp.config(function ($routeProvider) {
   {
       controller: '',
       templateUrl: 'partials/login.html'
+  })
+  .when('/myHome',
+  {
+      controller: '',
+      templateUrl: 'partials/myHome.html'
   })  
   .when('/messages',
   {
+      controller: '',
       templateUrl: 'partials/messages.html'
   })
   .when('/invites',
@@ -52,6 +58,6 @@ myApp.config(function ($routeProvider) {
       controller: '',
       templateUrl: 'partials/editPatient.html'
   })
-  .otherwise({redirectTo: 'home.html'});
+  .otherwise({redirectTo: 'login.php'});
 
 });
