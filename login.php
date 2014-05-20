@@ -38,7 +38,7 @@
   </div><!-- /container -->
 </div>
 <!-- /Header -->
-<h1><a href="#/login">HOME</a></h1>A
+
 
 <!-- Main -->
 <div class="container">
