@@ -1,0 +1,25 @@
+	<div>
+		<h2 style="font-family: 'Bitter', serif;">Patient Information</h2>
+		<blockquote><text style="font-family: 'Bitter', serif;">First Name: &nbsp</text> {{newPat.fname}} <br /><br />
+			<text style="font-family: 'Bitter', serif;">MI: &nbsp</text> {{newPat.mi}} <br /><br />
+			<text style="font-family: 'Bitter', serif;">Last Name: &nbsp</text> {{newPat.lname}} <br /><br />
+			<text style="font-family: 'Bitter', serif;">Date of Birth: &nbsp</text> {{newPat.dob}} <br /><br />
+			
+		</blockquote>
+		<div style="width: 200px;">
+		<fieldset class="form-group">
+			<textarea rows="1" ng-model="newPat.fname" class="form-control" placeholder="First Name" title="Review"></textarea>
+		</fieldset>
+		<fieldset class="form-group">
+			<textarea rows="1" ng-model="newPat.mi" class="form-control" placeholder="Middle Initial" title="Review"></textarea>
+		</fieldset>
+		<fieldset class="form-group">
+			<textarea rows="1" ng-model="newPat.lname" class="form-control" placeholder="Last Name" title="Review"></textarea>
+		</fieldset>
+		<fieldset class="form-group">
+			<textarea rows="1" ng-model="newPat.dob" class="form-control" placeholder="Date of Birth" title="Review"></textarea>
+		</fieldset>
+		
+		</div>
+			
+	</div>

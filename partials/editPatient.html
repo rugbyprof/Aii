@@ -1,0 +1,128 @@
+<html data-ng-app="myApp">
+
+
+  <head>
+  </head>
+
+
+  <body>
+
+   <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="images/cochlearLogo.png" style="height: 100px; width: 70px; padding-bottom: 50px;
+			margin-top: -13px" /></a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <!--<li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>-->
+              
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <!--<li class="active"><a href="./">Default</a></li>-->
+              <li><a href="#/newPatient">New Patient</a></li>
+              <li><a href="#/editPatient">Edit Patient</a></li>
+			  <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#/messages">Messages</a></li>
+                  <li><a href="#/invites">Invites</a></li>
+                  <li><a href="#/careTeam">Care Team</a></li>
+                  <li class="divider"></li>
+                  <!--<li class="dropdown-header">Nav header</li>-->
+                  <li><a href="#/accntSettings">Account Settings</a></li>
+                  <li><a href="#/logout">Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+	<div ng-controller="TabsDemoCtrl">
+		  
+		  <tabset>
+			<tab heading="Monthly Testing">Monthly Testing</tab>
+			<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
+			  {{tab.content}}
+			</tab>
+			<!--
+			<tab select="alertMe()">-->
+			  <tab-heading>
+				<i class="glyphicon glyphicon-bell"></i> Alert!
+			  </tab-heading>
+			  I've got an HTML heading, and a select callback. Pretty cool!
+			</tab>
+		  </tabset>
+
+		
+	</div>
+	
+	</br>
+	</br>
+	</br>
+    <div class="container">
+	
+      <h1> Edit Patient </h1>
+	  
+	  <div class="container" >
+	  
+	  <form name="reviewForm">
+              <!--  Live Preview NOT WORKING
+              <blockquote>
+                <strong> {{review.stars}} Live Edit</strong>
+                {{review.body}}
+                <cite class="clearfix">—{{review.author}}</cite>
+              </blockquote>-->
+
+              <!--  Review Form -->
+              <h4>Submit a Review</h4>
+              <fieldset class="form-group">
+                <select ng-model="review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars">
+                  <option value="">Change BMI</option>
+                </select>
+              </fieldset>
+			<div ng-controller="CollapseDemoCtrl">
+				<button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Edit Name</button>
+				<div collapse="isCollapsed">
+					<div style="width:350px";>
+					<fieldset class="form-group">
+						<textarea rows="1" cols="25"ng-model="review.body" class="form-control" placeholder="Change Name..." title="Review"></textarea>
+					</fieldset>
+					</div> 
+				</div>
+			</div>
+            
+			<div ng-controller="CollapseDemoCtrl">
+				<button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Edit email</button>
+				<div collapse="isCollapsed">
+					<div >
+					<fieldset class="form-group">
+						<input ng-model="review.author" style="width:350px";  type="email" class="form-control" placeholder="Change Email...jimmyDean@example.org" title="Email" />
+					</fieldset>
+					</div> 
+				</div>
+			</div>
+              
+              <fieldset class="form-group">
+                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+              </fieldset>
+            </form>
+	  </div>
+	  
+    </div>
+
+  </body>
+
+</html>
