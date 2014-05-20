@@ -1,51 +1,50 @@
 //Travis Osteen
-var myApp = angular.module('myApp', ['ngRoute','ui.bootstrap','myApp.controller.js']);
+var myApp = angular.module('myApp', ['ngRoute','ui.bootstrap','myApp.controllers']);
 
 
 myApp.config(function ($routeProvider) {
 
   $routeProvider.when('/', {
-      controller: 'DropdownCtrl',
+      controller: '',
       templateUrl: 'home.html'
   })
   .when('/home',
   {
-      controller: 'DropdownCtrl',
+      controller: '',
       templateUrl: 'home.html'
   })
   .when('/newPatient',
   {
-      controller: 'DropdownCtrl',
+      controller: '',
       templateUrl: 'partials/newPatient.html'
   })
   .when('/accntSettings',
   {
-      controller: 'DropdownCtrl',
+      controller: '',
       templateUrl: 'partials/accntSettings.html'
   })
   .when('/logout',
   {
-      controller: 'DropdownCtrl',
+      controller: '',
       templateUrl: 'partials/logout.html'
   })
   .when('/messages',
   {
-      controller: 'DropdownCtrl',
       templateUrl: 'partials/messages.html'
   })
   .when('/invites',
   {
-      controller: 'DropdownCtrl',
+      controller: '',
       templateUrl: 'partials/invites.html'
   })
   .when('/careTeam',
   {
-      controller: 'DropdownCtrl',
+      controller: '',
       templateUrl: 'partials/careTeam.html'
   })
   .when('/editPatient',
   {
-      controller: 'DropdownCtrl',
+      controller: '',
       templateUrl: 'partials/editPatient.html'
   })
   .otherwise({redirectTo: 'home.html'});
