@@ -28,6 +28,11 @@ myApp.config(function ($routeProvider) {
       controller: '',
       templateUrl: 'partials/logout.html'
   })
+  .when('/login',
+  {
+      controller: '',
+      templateUrl: 'partials/login.html'
+  })  
   .when('/messages',
   {
       templateUrl: 'partials/messages.html'
