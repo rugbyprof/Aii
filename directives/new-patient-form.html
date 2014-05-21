@@ -1,50 +1,32 @@
-	<div style="padding-left:50px;">
-		<h2 class="form">Patient Information</h2>
+<div style="padding-left:50px;" ng-controller="dateGenController">
+	<h2 class="form">Patient Information</h2>
 
-		<blockquote><text class="form">First Name:</text> &nbsp {{newPat.fname}}
-			<text class="form" style="float:right;">MI:</text> &nbsp {{newPat.mi}} <br /><br />
-			<text class="form">Last Name:</text> &nbsp {{newPat.lname}} <br /><br />
+	<blockquote><text class="form">First Namee:</text> &nbsp {{newPat.fname}}
+		<text class="form"> &nbsp&nbsp MI:</text> &nbsp {{newPat.mi}} <br /><br />
+		<text class="form">Last Name:</text> &nbsp {{newPat.lname}} <br /><br />
+		<text class="form">Date of Birth:</text> &nbsp {{newPat.month}}&nbsp{{newPat.day}},&nbsp{{newPat.year}} <br /><br />
+	</blockquote>
 
-
-		</blockquote>
-		<div style="width: 275px;">
+	<div style="width: 275px;">
 		<fieldset class="form-group">
 			<textarea rows="1" ng-model="newPat.fname" class="form-control" placeholder="First Name" title="Review"></textarea>
-			<br />
+			<br>
 			<textarea rows="1" ng-model="newPat.mi" class="form-control" placeholder="Middle Initial" title="Review"></textarea>
-			<br />
+			<br>
 			<textarea rows="1" ng-model="newPat.lname" class="form-control" placeholder="Last Name" title="Review"></textarea>
-			<br />
+			<br>
 
-			Birth:
-			<div class="btn-group" dropdown is-open="status.isopen" ng-controller="dateGenController">
-	      <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
-	        Day <span class="caret"></span>
-	      </button>
-	      <ul class="dropdown-menu scrollable-menu" role="menu">
-	        <li ng-repeat="day in days">{{day}}</li>
-	      </ul>
-			</div>
-			<div class="btn-group" dropdown is-open="status.isopen" ng-controller="dateGenController">
-				<button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
-					Month <span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu scrollable-menu" role="menu">
-					<li ng-repeat="month in months">{{month}}</li>
-				</ul>
-			</div>
-			<div class="btn-group" dropdown is-open="status.isopen" ng-controller="dateGenController">
-				<button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
-					Year <span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu scrollable-menu" role="menu">
-					<li ng-repeat="year in years">{{year}}</li>
-				</ul>
-			</div>
+			Date of Birth:<br>
 
+			Day:<select ng-model="newPat.day" ng-options="day for day in days"></select>
+			Month:<select ng-model="newPat.month" ng-options="month for month in months"></select><br><br>
+
+			<div style="margin: 0 auto; width: 70%">
+				Year:<select ng-model="newPat.year" ng-options="year for year in years"></select><br>
+			</div>
 
 		</fieldset>
 
-		</div>
-
 	</div>
+
+</div>
