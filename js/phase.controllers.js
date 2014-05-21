@@ -1,8 +1,8 @@
-var myApp = angular.module('phase.controllers', []);
+function(){var myApp = angular.module('phase.controllers', []);
 
-var pcontrollers = {};
+var controllers = {};
 
-pcontrollers.existingPatientsCtrl = function ($scope) {
+controllers.existingPatientsCtrl = function ($scope) {
  
   $scope.open = function($event) {
     $event.preventDefault();
@@ -28,7 +28,7 @@ pcontrollers.existingPatientsCtrl = function ($scope) {
 	};
 };
 
-pcontrollers.periopCtrl = function ($scope) {
+controllers.periopCtrl = function ($scope) {
   $scope.ear="";
   $scope.procTreated="";
   $scope.procNonTreated="";
@@ -42,7 +42,7 @@ pcontrollers.periopCtrl = function ($scope) {
 	};
 };
 
-pcontrollers.candidacyCtrl = function ($scope) {
+controllers.candidacyCtrl = function ($scope) {
   $scope.pta="";
   $scope.srt="";
   $scope.sds="";
@@ -56,4 +56,5 @@ pcontrollers.candidacyCtrl = function ($scope) {
 	};
 };
 
-myApp.controller(pcontrollers);
+myApp.controller(controllers);
+})();
