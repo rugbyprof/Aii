@@ -6,12 +6,7 @@ myApp.config(function ($routeProvider) {
 
   $routeProvider.when('/', {
       controller: '',
-      templateUrl: 'partials/myHome.html'
-  })
-  .when('/myHome',
-  {
-      controller: '',
-      templateUrl: 'partials/myHome.html'
+      templateUrl: 'partials/newPatient.html'
   })
   .when('/newPatient',
   {
@@ -63,6 +58,6 @@ myApp.config(function ($routeProvider) {
       controller: '',
       templateUrl: 'partials/register.html'
   })
-  .otherwise({redirectTo: 'partials/myHome.html'});
+  .otherwise({redirectTo: 'partials/newPatient.html'});
 
 });
