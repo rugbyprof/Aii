@@ -5,7 +5,7 @@
 	  <div class="control-group" >
 		  <label>Date of Implantation</label>
 		  <div class="controls" >
-			<input class="txt" type="text" class="form-control" placeholder="mm/dd/yy">
+			<input class="txt" type="text" ng-model="date" class="form-control" placeholder="mm/dd/yy">
 		  </div>
 	  </div>
 	  <div class="control-group" >
@@ -41,9 +41,12 @@
 		</br>
 		<input type="submit" id="submit" value="Submit" />
 			<pre>treatment={{treatment}}</pre>
+			<div>
+			Date: {{date}} </br>
 			Ear: {{ear}} </br>
 			Procedure on treated ear: {{procTreated}} </br>
 			Procedure on non-treated ear: {{procNonTreated}}
+			</div>
 		</form>
 	 
 		
