@@ -1,12 +1,13 @@
-<div style="padding-left:50px;" ng-controller="DatepickerDemoCtrl">
+<div style="padding-left:50px;" ng-controller="newPatientsController">
+	<form ng-submit="submit()">
 	<h2 class="form">Patient Information</h2>
 
-	<blockquote><text class="form">First Namee:</text> &nbsp {{fname}}
+	<blockquote><text class="form">First Name:</text> &nbsp {{fname}}
 		<text class="form"> &nbsp&nbsp MI:</text> &nbsp {{mi}} <br><br>
 		<text class="form">Last Name:</text> &nbsp {{lname}} <br><br>
-		<text class="form">Date of Birth:</text> &nbsp {{dt | date:'fullDate'}} <br><br>
-		<text class="form">Address:</text> &nbsp {{newPat.street}} <br>
-		<text style="padding-left:78px;">{{newPat.city}},&nbsp{{newPat.state}}&nbsp{{newPat.zip}}</text> <br><br>
+		<text class="form">Date of Birth:</text> &nbsp {{dt | date:'shortDate'}} <br><br>
+		<text class="form">Address:</text> &nbsp {{street}} <br>
+		<text style="padding-left:78px;">{{city}},&nbsp{{state}}&nbsp{{zip}}</text> <br><br>
 	</blockquote>
 
 	<div style="width: 275px;">
@@ -31,19 +32,21 @@
 	        </div>
 	    </div>
 
-			<textarea rows="1" ng-model="newPat.street" class="form-control" placeholder="Street Address" title="newPatient"></textarea>
+			<textarea rows="1" ng-model="street" class="form-control" placeholder="Street Address" title="newPatient"></textarea>
 			<br>
-			<textarea rows="1" ng-model="newPat.city" class="form-control" placeholder="City" title="newPatient"></textarea>
+			<textarea rows="1" ng-model="city" class="form-control" placeholder="City" title="newPatient"></textarea>
 			<br>
-			<textarea rows="1" ng-model="newPat.state" class="form-control" placeholder="State" title="newPatient"></textarea>
+			<textarea rows="1" ng-model="state" class="form-control" placeholder="State" title="newPatient"></textarea>
 			<br>
-			<textarea rows="1" ng-model="newPat.zip" class="form-control" placeholder="Zip" title="newPatient"></textarea>
+			<textarea rows="1" ng-model="zip" class="form-control" placeholder="Zip" title="newPatient"></textarea>
 			<br>
-
-			<select class="form-control bfh-states" data-country="US" data-state="CA"></select>
 
 		</fieldset>
+		<input type="submit" id="submit" value="Submit" />
+
+		<pre>list={{list}}</pre>
 
 	</div>
+</form>
 
 </div>
