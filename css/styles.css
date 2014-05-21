@@ -5,7 +5,7 @@
 i {
   font-size:18px;
 }
-  
+
 footer {
   margin-top:20px;
   padding-top:20px;
@@ -28,4 +28,14 @@ footer {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   border-radius: 10px;
+}
+
+.form {
+  font-family: 'Bitter', serif;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
 }
