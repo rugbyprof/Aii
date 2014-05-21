@@ -1,4 +1,4 @@
-var app = angular.module('careTeamApp',['ngRoute','ui.bootstrap']);
+var app = angular.module('careTeamApp',['ngRoute','ui.bootstrap','ct_patientcontrollers']);
 
 			app.config(function ($routeProvider) {
 
@@ -24,7 +24,7 @@ var app = angular.module('careTeamApp',['ngRoute','ui.bootstrap']);
 			templateUrl: 'partials/providers.html'
 			})
             .when('/patientpage',{
-                controllers:'',
+                controllers:'getDataCtrl',
                 templateUrl: 'partials/patientpage.html'
             })
 			.otherwise({redirectTo: 'partials/home.html'});

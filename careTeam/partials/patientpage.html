@@ -1,6 +1,15 @@
-<div class="container">
+<div class="container" data-ng-app="careTeamApp">
     
-    <h3>Search Patient:</h3> 
+    <div data-ng-repeat="patient in patients">
+         <h3>Search Patient:</h3> 
     <input type="text" class="col-md-3">
-    
+     
+        
+    <ul>
+        <li >
+            {{patient.name}}
+        </li>
+    </ul>
+        
+    </div>
 </div>
