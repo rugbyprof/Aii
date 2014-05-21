@@ -32,28 +32,6 @@ controllers.newPatientsController = function ($scope) {
 	$scope.street = "";
 	$scope.city = "";
 	$scope.zip = "";
-	$scope.sex = "";
-	$scope.race = "";
-	$scope.bmi = "20";
-	$scope.height = "60";
-	$scope.weight = "120";
-
-	$scope.bmis = [];
-	$scope.heights = [];
-	$scope.weights = [];
-	$scope.i = 0;
-
-	for($scope.i=0;$scope.i<36;$scope.i++){
-		$scope.bmis[$scope.i] = $scope.i + 10;
-	}
-
-	for($scope.i=0;$scope.i<68;$scope.i++){
-		$scope.heights[$scope.i] = $scope.i + 12;
-	}
-
-	for($scope.i=0;$scope.i<221;$scope.i++){
-		$scope.weights[$scope.i] = $scope.i + 80;
-	}
 
   $scope.clear = function () {
     $scope.dt = null;
@@ -77,6 +55,7 @@ controllers.newPatientsController = function ($scope) {
   $scope.list = [];
   $scope.text = 'hello';
   $scope.submit = function() {
+    if ($scope.fname && $scope.lname && $scope.mi && $scope.dt && $scope.street && $scope.city && $scope.state && $scope.zip) {
       $scope.list.push(this.fname);
 			$scope.list.push(this.mi);
 			$scope.list.push(this.lname);
@@ -85,24 +64,8 @@ controllers.newPatientsController = function ($scope) {
 			$scope.list.push(this.city);
 			$scope.list.push(this.state);
 			$scope.list.push(this.zip);
-			$scope.list.push(this.sex);
-			$scope.list.push(this.race);
-			$scope.list.push(this.bmi);
-			$scope.list.push(this.height);
-			$scope.list.push(this.weight);
       $scope.fname = '';
-			$scope.lname = '';
-			$scope.mi = '';
-			$scope.dt = '';
-			$scope.street = '';
-			$scope.city =  '';
-			$scope.state = '';
-			$scope.zip = '';
-			$scope.sex = '';
-			$scope.race = '';
-			$scope.bmi = '';
-			$scope.height = '';
-			$scope.weight = '';
+    }
 	};
 };
 
