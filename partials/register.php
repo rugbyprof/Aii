@@ -1,10 +1,10 @@
 <?php
-	/*
+	
 	$U = new Users('rootLoginName', 'rootLoginPassword');
 	$encryptedPassword = md5($_POST['password']);
-	if(isset($_POST['login']))
+	if(isset($_POST['register']))
 	{
-		$U->login($_POST['username'], $encryptedPassword);
+		$U->register($_POST['username'], $encryptedPassword);
 	}
 	
 	class Users
@@ -19,21 +19,12 @@
 			}
 			$this->db = mysql_select_db('databaseName');
 		}
-		//Moves to the home page if username and password are correct
-		public function login($username, $password)
+		//Returns UserID if username and password are correct
+		public function register($username, $password)
 		{
-			$result = mysql_query("SELECT * FROM users WHERE username='$username' and password='$password'");
-			$count = mysql_num_rows($result);
-			if($count==1)
-			{
-				$_SESSION["username"] = $username;
-				$_SESSION["password"] = $password;
-				header("location:#/myHome");
-			}
-			else
-			{
-				echo "Incorrect Username/Password";
-			}
+			$id = $this->getMaxID();
+			mysql_query("INSERT INTO users VALUES ('$username','$password','$id')");
+			header("location:#/login.php");
 		}
 		//Returns the next unique ID
 		private function getMaxID()
@@ -45,7 +36,6 @@
 			return $id;
 		}
 	}
-	*/
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +43,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Login</title>
+		<title>Registration</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -82,57 +72,99 @@
     <div class="col-md-9">
       	
       <!-- column 2 -->	
+      
 	   <div class="row">
             <!-- center left-->	
          	<div class="col-md-12">
-			 
-
-              
               <div class="panel panel-default">
 				<div class="panel-heading">
 				  <div class="panel-title">
 					<i class="glyphicon glyphicon-wrench pull-right"></i>
-					<h4>User Login</h4>
+					<h4>Register</h4>
 				  </div>
 				</div>
 				<div class="panel-body" ng-controller="TabController as tab">
 				  <div class="tabbable"> <!-- Only required for left/right tabs -->
-					  <br>
+					  
+					  </br>
 					  
 					  <!--<div class="tab-content">-->
 					  
 						<div class="tab-pane">
-						  <form id="userLogin" class="form form-vertical" action="login.php" method="post">
+						  <form class="form form-vertical">
+							<div class="control-group" >
+							  <label>Name</label>
+							  <div class="controls" >
+								<input class="txt" type="text" class="form-control" placeholder="Enter Name">
+							  </div>
+							</div>
+							</br>
+							<div class="control-group" >
+							  <label>Date of Birth</label>
+							  <div class="controls" >
+								<input class="txt" type="text" class="form-control" placeholder="mm/dd/yyyy">
+							  </div>
+							</div>
+							</br>							
+							<div class="control-group" >
+							  <label>Sex</label>
+							  <div class="controls" >
+								<form action="">
+									<input type="radio" name="sex" value="male">Male<br>
+									<input type="radio" name="sex" value="female">Female
+								</form>
+								</div>
+							</div>
+							<hr>
+							<h4>Edit Contact Info</h4>
+							<div class="control-group">
+							  <label>Phone Number</label>
+							  <div class="controls">
+								<input class="txt"type="text" class="form-control" placeholder="Enter Phone Number">
+							  </div>
+							</div>
+							<div class="control-group">
+							  <label>Address</label>
+							  <div class="controls">
+								<input type="text" class="form-control" placeholder="Enter Address">
+							  </div>
+							</div> 
+												
+						
+							<div class="control-group">
+							  <label></label>
+							  <div class="controls">
+								<button type="submit" class="btn btn-primary">
+								  Post
+								</button>
+							  </div>
+							</div>   
+							
+							<hr>
+							<h4>(Developer) Temporary Registration</h4>
 							
 							<div class="control-group">
 							  <label>Username</label>
 							  <div class="controls">
-								<input type='text' class="form-control" name='username' placeholder="Enter Username">
+								<input type="text" class="form-control" name="username" placeholder="Enter Username">
 							  </div>
 							</div>
 							
 							<div class="control-group">
 							  <label>Password</label>
 							  <div class="controls">
-								<input type='password' class="form-control" name='password' placeholder="Enter Password">
+								<input type="password" class="form-control" name="password" placeholder="Enter Password">
 							  </div>
 							</div>
 							
 							<div class="control-group">
 							  <label></label>
 							  <div class="controls">
-								<button type="submit" name='login' class="btn btn-primary">
-									Login
-								</button>
-								<a href="#/register">
+								<button type="submit" name="login" class="btn btn-primary">
 								  Register
-								</a>
+								</button>
 							  </div>
-							  <br><br>
-							  <a href="#/myHome">(Developer) Bypass Login</a>
 							</div>
-							
-							
 							
 						  </form>
 						</div>
