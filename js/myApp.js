@@ -8,7 +8,7 @@ myApp.config(function ($routeProvider) {
       controller: '',
       templateUrl: 'partials/myHome.html'
   })
-  .when('/login',
+  .when('/myHome',
   {
       controller: '',
       templateUrl: 'partials/myHome.html'
@@ -31,7 +31,7 @@ myApp.config(function ($routeProvider) {
   .when('/login',
   {
       controller: '',
-      templateUrl: 'partials/login.html'
+      templateUrl: 'login.php'
   })
   .when('/myHome',
   {
