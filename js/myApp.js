@@ -1,5 +1,5 @@
 //Travis Osteen
-var myApp = angular.module('myApp', ['ngRoute','ui.bootstrap','myApp.controllers','myApp.directives']);
+var myApp = angular.module('careTeamApp', ['ngRoute','ui.bootstrap','myApp.controllers','myApp.directives']);
 
 
 myApp.config(function ($routeProvider) {
