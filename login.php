@@ -1,5 +1,5 @@
 <?php
-	
+	/*
 	$U = new Users('rootLoginName', 'rootLoginPassword');
 	$encryptedPassword = md5($_POST['password']);
 	if(isset($_POST['login']))
@@ -45,6 +45,7 @@
 			return $id;
 		}
 	}
+	*/
 ?>
 
 <!DOCTYPE html>
@@ -201,13 +202,6 @@
          
             <!--center-right-->
         	<div class="col-md-5">
-              
-                
-              
-                <hr>
-              
-				
-                <hr>
               <!--
                 <div class="btn-group btn-group-justified">
                   <a href="#" class="btn btn-info col-sm-3">
