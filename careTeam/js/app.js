@@ -5,23 +5,23 @@ var app = angular.module('careTeamApp',['ngRoute','ui.bootstrap']);
 			$routeProvider
 			.when('/', {
 			controller:'',
-			templateUrl: 'Partials/home.html'
+			templateUrl: 'partials/home.html'
 			})
 			.when('/home', {
 			controller:'',
-			templateUrl: 'Partials/home.html'
+			templateUrl: 'partials/home.html'
 			})
 			.when('/baa',{
 			controller:'',
-			templateUrl: 'Partials/baa.html'
+			templateUrl: 'partials/baa.html'
 			})
 			.when('/invitations',{
 			controller:'',
-			templateUrl: 'Partials/invitations.html'
+			templateUrl: 'partials/invitations.html'
 			})
 			.when('/providers',{
 			controller:'',
-			templateUrl: 'Partials/providers.html'
+			templateUrl: 'partials/providers.html'
 			})
 			.otherwise({redirectTo: 'Partials/home.html'});
 		
