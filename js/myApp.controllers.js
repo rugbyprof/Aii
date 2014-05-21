@@ -69,5 +69,4 @@ controllers.newPatientsController = function ($scope) {
 	};
 };
 
-
 myApp.controller(controllers);

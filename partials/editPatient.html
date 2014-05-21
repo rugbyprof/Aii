@@ -97,7 +97,7 @@
 					<h4>Edit Patient Info</h4>
 				  </div>
 				</div>
-				<div class="panel-body" ng-controller="TabController as tab">
+				<div class="panel-body" ng-controller="TabController as tab" >
 				  <div class="tabbable"> <!-- Only required for left/right tabs -->
 					  <ul class="nav nav-tabs">
 						<li ng-class="{active:tab.isSelected(0)}"><a href ng-click="tab.selectTab(0)">Demographics</a></li>
@@ -115,154 +115,19 @@
 					  </br></br>
 					  {{tab}}
 					  <!--<div class="tab-content">-->
-					  
-						<div class="tab-pane" id="tab0" ng-show="tab.isSelected(0)">
-						  <p>I'm in Demographics.</p>
-						  <p>Data is collected by CI Coordinator</p>
-						  <form class="form form-vertical">
-						  <h4>Edit Personal Info</h4>
-							<div class="control-group" >
-							  <label>Name</label>
-							  <div class="controls" >
-								<input class="txt" type="text" class="form-control" placeholder="Enter Name">
-							  </div>
-							</div>
-							</br>
-							<div class="control-group" >
-							  <label>Date of Birth</label>
-							  <div class="controls" >
-								<input class="txt" type="text" class="form-control" placeholder="mm/dd/yy">
-							  </div>
-							</div>
-							</br>							
-							<div class="control-group" >
-							  <label>Sex</label>
-							  <div class="controls" >
-								<form action="">
-									<input type="radio" name="sex" value="male">Male<br>
-									<input type="radio" name="sex" value="female">Female
-								</form>
-								</div>
-							</div>
-							<hr>
-							<h4>Edit Contact Info</h4>
-							<div class="control-group">
-							  <label>Phone Number</label>
-							  <div class="controls">
-								<input class="txt"type="text" class="form-control" placeholder="Enter Phone Number">
-							</div>
-							<div class="control-group">
-							  <label>Address</label>
-							  <div class="controls">
-								<input type="text" class="form-control" placeholder="Enter Address">
-							  </div>
-							</div> 
-							</div> 					
-							<div class="control-group">
-							  <label>Add Notes</label>
-							  <div class="controls">
-								<textarea class="form-control"></textarea>
-							  </div>
-							</div> 
-						
-							<div class="control-group">
-							  <label></label>
-							  <div class="controls">
-								<button type="submit" class="btn btn-primary">
-								  Post
-								</button>
-							  </div>
-							</div>   
-							
-						  </form>
-						</div>
-						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(1)">
-						  <p>I'm in Candidacy.</p>
-						  <p>Data is collected by Audiologist</p>
-						      <div class="container">
-								  <h2>Regular Hearing Test Values </h2>
-								  <hr/>
-								</br>
-								  <div class="row">
-									<div class="col-xs-6">
-									<label>Pure Tone Average (PTA), in decibels</label>
-									  <div class="range">
-										<input type="range" name="range" min="0" max="120" value="60" onchange="range.value=value">
-										<output id="range">60 db</output>
-									  </div>
-									</div>							
-								  </div>
-
-								  <div class="row">
-									<div class="col-xs-6">
-									<label>Speech Reception Threshold (SRT), in decibels</label>
-									  <div class="range range-success">
-										<input type="range" name="range" min="0" max="120" value="60" onchange="rangeSuccess.value=value">
-										<output id="rangeSuccess">50 db</output>
-									  </div>
-									</div>
-								  </div>
-
-								  <div class="row">
-									<div class="col-xs-6">
-									<label>Speech Discrimination Score (SDS), percentage</label>
-									  <div class="range range-warning">
-										<input type="range" name="range" min="0" max="100" value="50" onchange="rangeWarning.value=value">
-										<output id="rangeWarning">50%</output>
-									  </div>
-									</div>
-								  </div>
-
-								</div>
-						</div>
+					<div class="tab-pane" id="tab0" ng-show="tab.isSelected(0)">
+						<edit-patient-dem> </edit-patient-dem>
+					</div>
+					<div class="tab-pane" id="tab1" ng-show="tab.isSelected(1)">
+						<candidacy-tab></candidacy-tab>
+					</div>
 						<div class="tab-pane" id="tab2" ng-show="tab.isSelected(2)">
 						  <p>I'm in Initial Surgical Consultation.</p>
 						  <p>Data is collected by Data entry clerk</p>
 						</div>
-						<div class="tab-pane" id="tab2" ng-show="tab.isSelected(3)">
-						  <p>I'm in preop /or periop?.</p>
-						  <p>Data is collected by MA/surgeon</p>
-						  <div class="control-group" >
-							  <label>Date of Implantation</label>
-							  <div class="controls" >
-								<input class="txt" type="text" class="form-control" placeholder="mm/dd/yy">
-							  </div>
-						  </div>
-						  <div class="control-group" >
-							  <label>Ear(s) being treated</label>
-							  <div class="controls" >
-								<form action="">
-									<input type="radio" name="ear" value="Right">Right<br>
-									<input type="radio" name="ear" value="Left">Left</br>
-									<input type="radio" name="ear" value="Both">Bilateral</br>
-								</form>
-								</div>
-							</div>
-							</br>
-							<div class="control-group" >
-							  <label>Procedure done for treated ear(s)</label>
-							  <div class="controls" >
-								<form action="">
-									<input type="radio" name="proc" value="imp/elec">Cochlear Implant, Electric Only<br>
-									<input type="radio" name="proc" value="imp/acou">Cochlear Implant, Electro-acoustic
-									
-								</form>
-								</div>
-							</div>
-							</br>
-							<div class="control-group" >
-							  <label>Procedures done for NON-treated ear(s)</label>
-							  <div class="controls" >
-								<form action="">
-									<input type="radio" name="proc" value="imp/elec">Cochlear Implant, Electric Only<br>
-									<input type="radio" name="proc" value="imp/acou">Cochlear Implant, Electro-acoustic</br>
-									<input type="radio" name="proc" value="aid">Hearing Aid</br>
-									<input type="radio" name="proc" value="none">Nothing
-								</form>
-								</div>
-							</div>
-							etc etc
-						</div>
+					<div class="tab-pane" id="tab2" ng-show="tab.isSelected(3)">
+						<periop-tab></periop-tab>
+					</div>
 						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(4)">
 						  <p>I'm in 1 week post check.</p>
 						  <p>Time Zero Milestone</p>
@@ -273,15 +138,15 @@
 						</div>
 						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(6)">
 						  <p>I'm in 1 month Audiometric.</p>
-						  <p>Data is collected by Audiologist</p>
+						  <audiometric-testing></audiometric-testing>
 						</div>
 						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(7)">
 						  <p>I'm in 3 month Audiometric.</p>
-						  <p>Data is collected by Audiologist</p>
+						  <audiometric-testing></audiometric-testing>
 						</div>
 						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(8)">
 						  <p>I'm in 6 month Audiometric.</p>
-						  <p>Data is collected by Audiologist</p>
+						  <audiometric-testing></audiometric-testing>
 						</div>
 						</div>
 						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(9)">
@@ -290,7 +155,7 @@
 						</div>
 						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(10)">
 						  <p>I'm in 24 month Audiometric.</p>
-						  <p>Data is collected by Audiologist</p>
+						  <audiometric-testing></audiometric-testing>
 						</div>
 					  <!--</div>-->
 				</div>
