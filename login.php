@@ -1,6 +1,6 @@
 <?php
 	
-	$U = new Users('root', 'rugger31');
+	$U = new Users('root', 'root');
 	$encryptedPassword = md5($_POST['password']);
 	if(isset($_POST['login']))
 	{
@@ -15,7 +15,7 @@
 		{
 			if(!$this->connect = mysql_connect('localhost', $username, $password))
 			{
-				die("Failed to connect!");
+				echo "Failed to connect!";
 			}
 			$this->db = mysql_select_db('james');
 		}
