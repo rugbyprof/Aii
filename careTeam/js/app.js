@@ -11,9 +11,13 @@ var app = angular.module('careTeamApp',['ngRoute','ui.bootstrap']);
 			controller:'',
 			templateUrl: 'partials/home.html'
 			})
-			.when('/baa',{
+			.when('/careteams',{
 			controller:'',
+<<<<<<< HEAD
 			templateUrl: 'partials/baa.html'
+=======
+			templateUrl: 'partials/careteams.html'
+>>>>>>> SananBranch
 			})
 			.when('/invitations',{
 			controller:'',
@@ -23,6 +27,10 @@ var app = angular.module('careTeamApp',['ngRoute','ui.bootstrap']);
 			controller:'',
 			templateUrl: 'partials/providers.html'
 			})
-			.otherwise({redirectTo: 'Partials/home.html'});
+            .when('/patientpage',{
+                controllers:'',
+                templateUrl: 'partials/patientpage.html'
+            })
+			.otherwise({redirectTo: 'partials/home.html'});
 		
 		});
