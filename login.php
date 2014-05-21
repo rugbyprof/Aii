@@ -127,6 +127,8 @@
 								  Register
 								</a>
 							  </div>
+							  <br><br>
+							  <a href="#/myHome">(Developer) Bypass Login</a>
 							</div>
 							
 							
