@@ -60,7 +60,15 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
+		<style type="text/css">
+			userLogin
+			{
+				position: relative;
+				left: 100px;
+			}
+		</style>
 	</head>
+	
 	<body>
 <!-- Header -->
 
@@ -89,15 +97,16 @@
 </div>
 <!-- /Header -->
 
-
-<form id="userLogin" action="login.php" method="post">
-	<fieldset>
-		Username: <input type='text' name='username' maxlength="32"/> <br>
-		Password: <input type='text' name='password' maxlength="32"/> <br> <br>
-		<input type="submit" name="login" value="Log In">
-	</fieldset>
-	<a href="#/register">Register</a>
-</form>
+<div class="loginDiv">
+	<form id="userLogin" action="login.php" method="post">
+		<fieldset>
+			Username: <input type='text' name='username' maxlength="32"/> <br>
+			Password: <input type='text' name='password' maxlength="32"/> <br> <br>
+			<input type="submit" name="login" value="Log In">
+		</fieldset>
+		<a href="#/register">Register</a>
+	</form>
+</div>
 
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
