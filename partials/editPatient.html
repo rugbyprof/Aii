@@ -11,7 +11,13 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
+	<style>
+		.txt {
+		width: 300px;
+		}
+	</style>
 	</head>
+	
 	<body>
 <!-- Header -->
 <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
@@ -23,8 +29,15 @@
       <a class="navbar-brand" href="#">Control Panel</a>
     </div>
     <div class="navbar-collapse collapse">
+		
       <ul class="nav navbar-nav navbar-right">
-        
+	  <ul class="nav nav-justified " style="width:15px">
+			<li ><a href="#" ><i class="glyphicon glyphicon-cog"></i></a></li>
+			<li><a href="#"><i class="glyphicon glyphicon-heart"></i></a></li>
+			<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span></a><ul class="dropdown-menu" role="menu"><li><a href="#">1. Is there a way..</a></li><li><a href="#">2. Hello, admin. I would..</a></li><li><a href="#"><strong>All messages</strong></a></li></ul></li>
+			<li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
+			<li><a title="Add Widget" data-toggle="modal" href="#addWidgetModal"><span class="glyphicon glyphicon-plus-sign"></span></a></li>
+		</ul> 
         <li class="dropdown">
           <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
             <i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
@@ -75,7 +88,7 @@
             <!-- center left-->	
          	<div class="col-md-12">
 			  <div class="well">Inbox Messages <span class="badge pull-right">3</span></div>
-              
+
               <hr>
               <div class="panel panel-default">
 				<div class="panel-heading">
@@ -87,104 +100,229 @@
 				<div class="panel-body" ng-controller="TabController as tab">
 				  <div class="tabbable"> <!-- Only required for left/right tabs -->
 					  <ul class="nav nav-tabs">
-						<li class="active"><a href ng-click="tab.selectTab(0)">Demographics</a></li>
-						<li><a href data-toggle="tab" ng-click="tab.selectTab(1)">Candidacy Testing</a></li>
-						<li><a href data-toggle="tab" ng-click="tab.selectTab(2)">Initial Surgical Consultation</a></li>
-						<li><a href data-toggle="tab" ng-click="tab.selectTab(3)">Preoperative Visit</a></li>
-						<li><a href data-toggle="tab" ng-click="tab.selectTab(4)">1 Week Postoperative Check</a></li>
-						<li><a href data-toggle="tab" ng-click="tab.selectTab(5)">Activation (3 weeks)</a></li>
-						<li><a href data-toggle="tab" ng-click="tab.selectTab(6)">1 month Audiometric Testing</a></li>
-						<li><a href data-toggle="tab" ng-click="tab.selectTab(7)">3 month Audiometric Testing</a></li>
-						<li><a href data-toggle="tab" ng-click="tab.selectTab(8)">5 month Audiometric Testing</a></li>
+						<li ng-class="{active:tab.isSelected(0)}"><a href ng-click="tab.selectTab(0)">Demographics</a></li>
+						<li ng-class="{active:tab.isSelected(1)}"><a href ng-click="tab.selectTab(1)">Candidacy Testing</a></li>
+						<li ng-class="{active:tab.isSelected(2)}"><a href data-toggle="tab" ng-click="tab.selectTab(2)">Initial Surgical Consultation</a></li>
+						<li ng-class="{active:tab.isSelected(3)}"><a href data-toggle="tab" ng-click="tab.selectTab(3)">Preoperative Visit</a></li>
+						<li ng-class="{active:tab.isSelected(4)}"><a href data-toggle="tab" ng-click="tab.selectTab(4)">1 Week Postoperative Check</a></li>
+						<li ng-class="{active:tab.isSelected(5)}"><a href data-toggle="tab" ng-click="tab.selectTab(5)">Activation (3 weeks)</a></li>
+						<li ng-class="{active:tab.isSelected(6)}"><a href data-toggle="tab" ng-click="tab.selectTab(6)">1 month Audiometric Testing</a></li>
+						<li ng-class="{active:tab.isSelected(7)}"><a href data-toggle="tab" ng-click="tab.selectTab(7)">3 month Audiometric Testing</a></li>
+						<li ng-class="{active:tab.isSelected(8)}"><a href data-toggle="tab" ng-click="tab.selectTab(8)">6 month Audiometric Testing</a></li>
+						<li ng-class="{active:tab.isSelected(9)}"><a href data-toggle="tab" ng-click="tab.selectTab(9)">12 month Audiometric Testing</a></li>
+						<li ng-class="{active:tab.isSelected(10)}"><a href data-toggle="tab" ng-click="tab.selectTab(10)">24 month Audiometric Testing</a></li>
 					  </ul>
+					  </br></br>
 					  {{tab}}
-					  <div class="tab-content">
+					  <!--<div class="tab-content">-->
+					  
 						<div class="tab-pane" id="tab0" ng-show="tab.isSelected(0)">
 						  <p>I'm in Demographics.</p>
+						  <p>Data is collected by CI Coordinator</p>
+						  <form class="form form-vertical">
+						  <h4>Edit Personal Info</h4>
+							<div class="control-group" >
+							  <label>Name</label>
+							  <div class="controls" >
+								<input class="txt" type="text" class="form-control" placeholder="Enter Name">
+							  </div>
+							</div>
+							</br>
+							<div class="control-group" >
+							  <label>Date of Birth</label>
+							  <div class="controls" >
+								<input class="txt" type="text" class="form-control" placeholder="mm/dd/yy">
+							  </div>
+							</div>
+							</br>							
+							<div class="control-group" >
+							  <label>Sex</label>
+							  <div class="controls" >
+								<form action="">
+									<input type="radio" name="sex" value="male">Male<br>
+									<input type="radio" name="sex" value="female">Female
+								</form>
+								</div>
+							</div>
+							<hr>
+							<h4>Edit Contact Info</h4>
+							<div class="control-group">
+							  <label>Phone Number</label>
+							  <div class="controls">
+								<input class="txt"type="text" class="form-control" placeholder="Enter Phone Number">
+							</div>
+							<div class="control-group">
+							  <label>Address</label>
+							  <div class="controls">
+								<input type="text" class="form-control" placeholder="Enter Address">
+							  </div>
+							</div> 
+							</div> 					
+							<div class="control-group">
+							  <label>Add Notes</label>
+							  <div class="controls">
+								<textarea class="form-control"></textarea>
+							  </div>
+							</div> 
+						
+							<div class="control-group">
+							  <label></label>
+							  <div class="controls">
+								<button type="submit" class="btn btn-primary">
+								  Post
+								</button>
+							  </div>
+							</div>   
+							
+						  </form>
 						</div>
 						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(1)">
 						  <p>I'm in Candidacy.</p>
+						  <p>Data is collected by Audiologist</p>
+						      <div class="container">
+								  <h2>Regular Hearing Test Values </h2>
+								  <hr/>
+								</br>
+								  <div class="row">
+									<div class="col-xs-6">
+									<label>Pure Tone Average (PTA), in decibels</label>
+									  <div class="range">
+										<input type="range" name="range" min="0" max="120" value="60" onchange="range.value=value">
+										<output id="range">60 db</output>
+									  </div>
+									</div>							
+								  </div>
+
+								  <div class="row">
+									<div class="col-xs-6">
+									<label>Speech Reception Threshold (SRT), in decibels</label>
+									  <div class="range range-success">
+										<input type="range" name="range" min="0" max="120" value="60" onchange="rangeSuccess.value=value">
+										<output id="rangeSuccess">50 db</output>
+									  </div>
+									</div>
+								  </div>
+
+								  <div class="row">
+									<div class="col-xs-6">
+									<label>Speech Discrimination Score (SDS), percentage</label>
+									  <div class="range range-warning">
+										<input type="range" name="range" min="0" max="100" value="50" onchange="rangeWarning.value=value">
+										<output id="rangeWarning">50%</output>
+									  </div>
+									</div>
+								  </div>
+
+								</div>
 						</div>
 						<div class="tab-pane" id="tab2" ng-show="tab.isSelected(2)">
-						  <p>I'm in Section 1.</p>
+						  <p>I'm in Initial Surgical Consultation.</p>
+						  <p>Data is collected by Data entry clerk</p>
 						</div>
-						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(3)">
-						  <p>I'm in Section 1.</p>
-						</div><div class="tab-pane" id="tab1" ng-show="tab.isSelected(4)">
-						  <p>I'm in Section 1.</p>
-						</div><div class="tab-pane" id="tab1" ng-show="tab.isSelected(5)">
-						  <p>I'm in Section 1.</p>
-						</div><div class="tab-pane" id="tab1" ng-show="tab.isSelected(6)">
-						  <p>I'm in Section 1.</p>
-						</div><div class="tab-pane" id="tab1" ng-show="tab.isSelected(7)">
-						  <p>I'm in Section 1.</p>
+						<div class="tab-pane" id="tab2" ng-show="tab.isSelected(3)">
+						  <p>I'm in preop /or periop?.</p>
+						  <p>Data is collected by MA/surgeon</p>
+						  <div class="control-group" >
+							  <label>Date of Implantation</label>
+							  <div class="controls" >
+								<input class="txt" type="text" class="form-control" placeholder="mm/dd/yy">
+							  </div>
+						  </div>
+						  <div class="control-group" >
+							  <label>Ear(s) being treated</label>
+							  <div class="controls" >
+								<form action="">
+									<input type="radio" name="ear" value="Right">Right<br>
+									<input type="radio" name="ear" value="Left">Left</br>
+									<input type="radio" name="ear" value="Both">Bilateral</br>
+								</form>
+								</div>
+							</div>
+							</br>
+							<div class="control-group" >
+							  <label>Procedure done for treated ear(s)</label>
+							  <div class="controls" >
+								<form action="">
+									<input type="radio" name="proc" value="imp/elec">Cochlear Implant, Electric Only<br>
+									<input type="radio" name="proc" value="imp/acou">Cochlear Implant, Electro-acoustic
+									
+								</form>
+								</div>
+							</div>
+							</br>
+							<div class="control-group" >
+							  <label>Procedures done for NON-treated ear(s)</label>
+							  <div class="controls" >
+								<form action="">
+									<input type="radio" name="proc" value="imp/elec">Cochlear Implant, Electric Only<br>
+									<input type="radio" name="proc" value="imp/acou">Cochlear Implant, Electro-acoustic</br>
+									<input type="radio" name="proc" value="aid">Hearing Aid</br>
+									<input type="radio" name="proc" value="none">Nothing
+								</form>
+								</div>
+							</div>
+							etc etc
 						</div>
-					  </div>
-					</div>
-				  <form class="form form-vertical">
-					<div class="control-group">
-					  <label>Name</label>
-					  <div class="controls">
-						<input type="text" class="form-control" placeholder="Enter Name">
-					  </div>
-					</div>      
-					<div class="control-group">
+						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(4)">
+						  <p>I'm in 1 week post check.</p>
+						  <p>Time Zero Milestone</p>
+						</div>
+						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(5)">
+						  <p>I'm in Activation.</p>
+						  <p>Data is collected by Audiologist</p>
+						</div>
+						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(6)">
+						  <p>I'm in 1 month Audiometric.</p>
+						  <p>Data is collected by Audiologist</p>
+						</div>
+						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(7)">
+						  <p>I'm in 3 month Audiometric.</p>
+						  <p>Data is collected by Audiologist</p>
+						</div>
+						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(8)">
+						  <p>I'm in 6 month Audiometric.</p>
+						  <p>Data is collected by Audiologist</p>
+						</div>
+						</div>
+						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(9)">
+						  <p>I'm in 12 month Audiometric.</p>
+						  <p>Data is collected by Audiologist</p>
+						</div>
+						<div class="tab-pane" id="tab1" ng-show="tab.isSelected(10)">
+						  <p>I'm in 24 month Audiometric.</p>
+						  <p>Data is collected by Audiologist</p>
+						</div>
+					  <!--</div>-->
+				</div>
+				
+				<!-- password title form box?  
+				<div class="control-group">
 					  <label>Title</label>
 					  <div class="controls">
 						<input type="password" class="form-control" placeholder="Password">
 						
 					  </div>
-					</div>
-					<hr>
-					<h4>Edit Contact Info</h4>
+					</div>-->
+				  <!-- DropDown thing
 					<div class="control-group">
-					  <label>Phone Number</label>
-					  <div class="controls">
-						<input type="text" class="form-control" placeholder="Enter Phone Number">
-					</div>
-					<div class="control-group">
-					  <label>Address</label>
-					  <div class="controls">
-						<input type="text" class="form-control" placeholder="Enter Address">
-					  </div>
-					</div> 
-					</div> 					
-					<div class="control-group">
-					  <label>Add Notes</label>
-					  <div class="controls">
-						<textarea class="form-control"></textarea>
-					  </div>
-					</div> 
-					<div class="control-group">
-					  <label>Select Phase of Care</label>
-					  <div class="controls">
-						<select class="form-control">
-						<option>Demographics</option>
-						<option>Candidacy Testing</option>
-						<option>Initial Surgical Consultation</option>
-						<option>Preoperative Visit</option>
-						<option>1 Week Postoperative Check</option>
-						<option>Activation (3 weeks)</option>
-						<option>1 month Audiometric Testing</option>  
-						<option>3 month Audiometric Testing</</option>
-						<option>6 month Audiometric Testing</</option>
-						<option>12 month Audiometric Testing</</option>
-						<option>24 month Audiometric Testing</</option>
-						</select>
-					  </div>
-					</div>    
-					<div class="control-group">
-					  <label></label>
-					  <div class="controls">
-						<button type="submit" class="btn btn-primary">
-						  Post
-						</button>
-					  </div>
-					</div>   
-					
-				  </form>
-				  
-				  
+					<label>Select Phase of Care</label>				  
+				  <div class="controls">
+								<select class="form-control">
+								<option>Demographics</option>
+								<option>Candidacy Testing</option>
+								<option>Initial Surgical Consultation</option>
+								<option>Preoperative Visit</option>
+								<option>1 Week Postoperative Check</option>
+								<option>Activation (3 weeks)</option>
+								<option>1 month Audiometric Testing</option>  
+								<option>3 month Audiometric Testing</</option>
+								<option>6 month Audiometric Testing</</option>
+								<option>12 month Audiometric Testing</</option>
+								<option>24 month Audiometric Testing</</option>
+								</select>
+							  </div>
+							  </div>  
+				   -->
 				</div><!--/panel content-->
 			  </div><!--/panel-->
 			  
@@ -221,13 +359,7 @@
             <!--center-right-->
         	<div class="col-md-5">
               
-                <ul class="nav nav-justified">
-         			<li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-heart"></i></a></li>
-         			<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span></a><ul class="dropdown-menu" role="menu"><li><a href="#">1. Is there a way..</a></li><li><a href="#">2. Hello, admin. I would..</a></li><li><a href="#"><strong>All messages</strong></a></li></ul></li>
-         			<li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
-         			<li><a title="Add Widget" data-toggle="modal" href="#addWidgetModal"><span class="glyphicon glyphicon-plus-sign"></span></a></li>
-       			</ul>  
+                
               
                 <hr>
               
