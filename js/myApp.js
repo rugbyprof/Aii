@@ -58,6 +58,11 @@ myApp.config(function ($routeProvider) {
       controller: '',
       templateUrl: 'partials/editPatient.html'
   })
+  .when('/register',
+  {
+      controller: '',
+      templateUrl: 'partials/register.html'
+  })
   .otherwise({redirectTo: 'partials/myHome.html'});
 
 });
