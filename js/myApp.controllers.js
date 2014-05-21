@@ -5,7 +5,7 @@ var controllers = {};
 controllers.regularController = function($scope) {
 	$scope.name = "Anne";
 }
-<<<<<<< HEAD
+
 controllers.TabController = function(){
 	this.tab=0;
 	this.selectTab=function(tabNum){
@@ -14,8 +14,8 @@ controllers.TabController = function(){
 	this.isSelected=function(checkTab){
 		return this.tab===checkTab;
 	};
-}	
-=======
+}
+
 
 controllers.DatepickerDemoCtrl = function ($scope) {
   $scope.today = function() {
@@ -45,5 +45,5 @@ controllers.DatepickerDemoCtrl = function ($scope) {
   $scope.format = 'yyyy/MM/dd';
 };
 
->>>>>>> Travis-Branch
+
 myApp.controller(controllers);
