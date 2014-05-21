@@ -1,31 +1,35 @@
-<div style="padding-left:50px;" ng-controller="dateGenController">
+<div style="padding-left:50px;" ng-controller="DatepickerDemoCtrl">
 	<h2 class="form">Patient Information</h2>
 
-	<blockquote><text class="form">First Namee:</text> &nbsp {{newPat.fname}}
-		<text class="form"> &nbsp&nbsp MI:</text> &nbsp {{newPat.mi}} <br><br>
-		<text class="form">Last Name:</text> &nbsp {{newPat.lname}} <br><br>
-		<text class="form">Date of Birth:</text> &nbsp {{newPat.month}}&nbsp{{newPat.day}},&nbsp{{newPat.year}} <br><br>
+	<blockquote><text class="form">First Namee:</text> &nbsp {{fname}}
+		<text class="form"> &nbsp&nbsp MI:</text> &nbsp {{mi}} <br><br>
+		<text class="form">Last Name:</text> &nbsp {{lname}} <br><br>
+		<text class="form">Date of Birth:</text> &nbsp {{dt | date:'fullDate'}} <br><br>
 		<text class="form">Address:</text> &nbsp {{newPat.street}} <br>
 		<text style="padding-left:78px;">{{newPat.city}},&nbsp{{newPat.state}}&nbsp{{newPat.zip}}</text> <br><br>
 	</blockquote>
 
 	<div style="width: 275px;">
 		<fieldset class="form-group">
-			<textarea rows="1" ng-model="newPat.fname" class="form-control" placeholder="First Name" title="newPatient"></textarea>
+			<textarea rows="1" ng-model="fname" class="form-control" placeholder="First Name" title="newPatient"></textarea>
 			<br>
-			<textarea rows="1" ng-model="newPat.mi" class="form-control" placeholder="Middle Initial" title="newPatient"></textarea>
+			<textarea rows="1" ng-model="mi" class="form-control" placeholder="Middle Initial" title="newPatient"></textarea>
 			<br>
-			<textarea rows="1" ng-model="newPat.lname" class="form-control" placeholder="Last Name" title="newPatient"></textarea>
+			<textarea rows="1" ng-model="lname" class="form-control" placeholder="Last Name" title="newPatient"></textarea>
 			<br>
 
-			Date of Birth:<br>
-
-			Day:<select ng-model="newPat.day" ng-options="day for day in days"></select>
-			Month:<select ng-model="newPat.month" ng-options="month for month in months"></select><br><br>
-
-			<div style="margin: 0 auto; width: 70%">
-				Year:<select ng-model="newPat.year" ng-options="year for year in years"></select><br>
-			</div><br>
+	    <h4>Date of Birth</h4>
+	    <div class="row">
+	        <div class="col-md-9">
+	            <p class="input-group">
+	              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" max-date="{{maxDate}}"
+								 datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+	              <span class="input-group-btn">
+	                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+	              </span>
+	            </p>
+	        </div>
+	    </div>
 
 			<textarea rows="1" ng-model="newPat.street" class="form-control" placeholder="Street Address" title="newPatient"></textarea>
 			<br>
@@ -35,6 +39,8 @@
 			<br>
 			<textarea rows="1" ng-model="newPat.zip" class="form-control" placeholder="Zip" title="newPatient"></textarea>
 			<br>
+
+			<select class="form-control bfh-states" data-country="US" data-state="CA"></select>
 
 		</fieldset>
 
