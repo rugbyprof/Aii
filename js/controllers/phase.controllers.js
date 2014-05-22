@@ -2,7 +2,9 @@
 
 var controllers = {};
 
-controllers.existingPatientsCtrl = function ($scope) {
+
+
+controllers.existingPatientsCtrl = function ($scope, $http) {
 
   $scope.open = function($event) {
     $event.preventDefault();
@@ -10,6 +12,13 @@ controllers.existingPatientsCtrl = function ($scope) {
 
     $scope.opened = true;
   };
+
+  $scope.anne = "Anne";
+
+  $http.get("phpTest/getData.php")
+  .then(function(res) {
+    $scope.rocks = res.data;
+  });
 
 
   $scope.street = "";
@@ -24,6 +33,8 @@ controllers.existingPatientsCtrl = function ($scope) {
 		}
 	};
 };
+
+
 
 controllers.periopCtrl = function ($scope) {
   $scope.date="";

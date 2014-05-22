@@ -3,7 +3,7 @@
 	  <p>Data is collected by CI Coordinator</p>
 	  <div ng-controller="existingPatientsCtrl">
 	  <form class="form form-vertical" ng-submit="submit()" action="phpTest/test2.php" method="post">
-	  <!--
+
 	  <p>hello{{test}}</p>
 	  <h4>Edit Personal Info</h4>
 		<div class="control-group" >
@@ -19,7 +19,7 @@
 			<input class="txt" type="text" class="form-control" placeholder="mm/dd/yy">
 		  </div>
 		</div>
-		</br>							
+		</br>
 		<div class="control-group" >
 		  <label>Sex</label>
 		  <div class="controls" >
@@ -36,16 +36,19 @@
 		  <div class="controls">
 			<input class="txt"type="text" class="form-control" placeholder="Enter Phone Number">
 		</div>
-		-->
+
+
+
+
 		<p> !!!!!!!!!!!! </p>
 
 		<div class="control-group">
-		
+
 			<blockquote>
 				<text class="form">Address:</text> &nbsp {{street}} <br>
 				<text style="padding-left:78px;">{{city}},&nbsp{{state}}&nbsp{{zip}}</text> <br>
 			</blockquote>
-			
+
 			<label>Edit Address!!!</label>
 			<br>
 			<input type="text" class="txt" name="street" ng-model="street" class="form-control" placeholder="Street Address" title="existingPatient"/>
@@ -56,24 +59,49 @@
 			<br><br>
 			<input type="text" class="txt" name="zip" ng-model="zip" class="form-control" placeholder="Zip" title="existingPatient"/>
 			<br><br>
-			
-		</div> 
+
+		</div>
 			<input type="submit" id="submit" value="Submit" />
 			<pre>list={{list}}</pre>
-			
-		  
-		
-		
+
+
+
+
 	  </form>
-	 
-		
-	</div> 					
-		<!--<div class="control-group">
+
+
+	</div>
+
+	Name: {{anne}}
+
+	<ul>
+		<li data-ng-repeat="rock in rocks">
+				{{rock}}
+
+		</li>
+	</ul>
+
+
+
+		<div class="control-group">
 		  <label>Add Notes</label>
 		  <div class="controls">
 			<textarea class="form-control"></textarea>
 		  </div>
-		</div> -->
-	
+		</div>
+<!--
+<html>
 
-	  
+	<div ng-controller="existingPatientsCtrl">
+		Name: {{anne}}
+
+		<ul>
+      <li data-ng-repeat="rock in rocks">
+          {{rock.fname}}
+      </li>
+    </ul>
+
+
+	</div>
+</html>
+-->
