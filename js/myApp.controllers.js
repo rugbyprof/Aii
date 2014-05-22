@@ -25,18 +25,19 @@ controllers.newPatientsController = function ($scope) {
 
   $scope.maxDate = new Date();
 
+	$scope.patID = "";
 	$scope.fname = "";
 	$scope.lname = "";
 	$scope.mi = "";
 	$scope.dt = "";
-	$scope.street = "";
+	$scope.streetAddress = "";
 	$scope.city = "";
 	$scope.zip = "";
-	$scope.sex = "";
-	$scope.race = "";
-	$scope.bmi = "20";
-	$scope.height = "60";
-	$scope.weight = "120";
+	$scope.Sex = "";
+	$scope.Race = "";
+	$scope.BMI = "20";
+	$scope.Height = "60";
+	$scope.Weight = "120";
 
 	$scope.bmis = [];
 	$scope.heights = [];
@@ -77,51 +78,29 @@ controllers.newPatientsController = function ($scope) {
   $scope.list = [];
   $scope.text = 'hello';
   $scope.submit = function() {
-      $scope.list.push(this.fname);
-			$scope.list.push(this.mi);
-			$scope.list.push(this.lname);
-			$scope.list.push(this.dt);
-			$scope.list.push(this.street);
-			$scope.list.push(this.city);
-			$scope.list.push(this.state);
-			$scope.list.push(this.zip);
-			$scope.list.push(this.sex);
-			$scope.list.push(this.race);
-			$scope.list.push(this.bmi);
-			$scope.list.push(this.height);
-			$scope.list.push(this.weight);
-      $scope.fname = '';
-			$scope.lname = '';
-			$scope.mi = '';
-			$scope.dt = '';
-			$scope.street = '';
-			$scope.city =  '';
-			$scope.state = '';
-			$scope.zip = '';
-			$scope.sex = '';
-			$scope.race = '';
-			$scope.bmi = '';
-			$scope.height = '';
-			$scope.weight = '';
+      $scope.list.push({'PatientID':this.patID, 'fname':this.fname, 'lname':this.lname, 'mi':this.lname,
+			'DOB':this.dt, 'streetAddress':this.streetAddress, 'city':this.city, 'state':this.state,
+			'zip':this.zip, 'Sex':this.Sex, 'Race':this.Race, 'BMI':this.BMI,
+			'Height':this.Height, 'Weight':this.Weight});
 	};
 };
 
 controllers.existingPatientsCtrl = function ($scope) {
- 
+
   $scope.open = function($event) {
     $event.preventDefault();
     $event.stopPropagation();
 
     $scope.opened = true;
   };
-  
- 
+
+
   $scope.street = "";
   $scope.city = "";
   $scope.state = "";
   $scope.zip = "";
    $scope.list = [];
-   
+
   $scope.submit = function() {
 		{
 			$scope.list.push({'street':this.street,'city':this.city,'state':this.state,'zip':this.zip});
@@ -137,9 +116,9 @@ controllers.periopCtrl = function ($scope) {
   $scope.treatment=[];
   $scope.submit = function() {
 	if($scope.date && $scope.ear && $scope.procTreated && $scope.procNonTreated)	{
-			$scope.treatment.push({'Date of Implantation': this.date, 
-			'ear':this.ear, 
-			'procedureForTreated':this.procTreated, 
+			$scope.treatment.push({'Date of Implantation': this.date,
+			'ear':this.ear,
+			'procedureForTreated':this.procTreated,
 			'procedureForNontreated':this.procNonTreated});
 		}
 	};
