@@ -12,16 +12,11 @@ var app = angular.module('careTeamApp',['ngRoute','ui.bootstrap','ct_patientcont
 			templateUrl: 'partials/home.html'
 			})
 			.when('/careteams',{
-<<<<<<< HEAD
 			controller:'',
-<<<<<<< HEAD
+
 			templateUrl: 'partials/baa.html'
-=======
-=======
 			controller:'getCareTeamDataCtrl',
->>>>>>> SananBranch
 			templateUrl: 'partials/careteams.html'
->>>>>>> SananBranch
 			})
 			.when('/invitations',{
 			controller:'',
