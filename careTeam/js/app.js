@@ -12,9 +12,7 @@ var app = angular.module('careTeamApp',['ngRoute','ui.bootstrap','ct_patientcont
 			templateUrl: 'partials/home.html'
 			})
 			.when('/careteams',{
-			controller:'',
-
-			templateUrl: 'partials/baa.html'
+			
 			controller:'getCareTeamDataCtrl',
 			templateUrl: 'partials/careteams.html'
 			})
