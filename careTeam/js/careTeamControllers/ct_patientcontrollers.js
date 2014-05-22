@@ -2,7 +2,7 @@ var careTeamApp = angular.module('ct_patientcontrollers',[]);
 
 var controllers = {};
 
-controllers.getDataCtrl = function($scope){
+controllers.getPatientDataCtrl = function($scope){
     
     $scope.patients = [
         
