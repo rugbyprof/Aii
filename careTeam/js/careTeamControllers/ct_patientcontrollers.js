@@ -8,8 +8,7 @@ controllers.getPatientDataCtrl = function($scope, $http){
     .then(function(res){
         $scope.patients = res.data;
     });
-    
-    
+
        
 }
 
