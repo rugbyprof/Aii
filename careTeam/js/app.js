@@ -12,10 +12,6 @@ var app = angular.module('careTeamApp',['ngRoute','ui.bootstrap','ct_careteamcon
 			templateUrl: 'partials/home.html'
 			})
 			.when('/careteams',{
-<<<<<<< HEAD
-			
-=======
->>>>>>> SananBranch
 			controller:'getCareTeamDataCtrl',
 			templateUrl: 'partials/careteams.html'
 			})
