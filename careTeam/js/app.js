@@ -5,24 +5,32 @@ var app = angular.module('careTeamApp',['ngRoute','ui.bootstrap']);
 			$routeProvider
 			.when('/', {
 			controller:'',
-			templateUrl: 'Partials/home.html'
+			templateUrl: 'partials/home.html'
 			})
 			.when('/home', {
 			controller:'',
-			templateUrl: 'Partials/home.html'
+			templateUrl: 'partials/home.html'
 			})
-			.when('/baa',{
+			.when('/careteams',{
 			controller:'',
-			templateUrl: 'Partials/baa.html'
+<<<<<<< HEAD
+			templateUrl: 'partials/baa.html'
+=======
+			templateUrl: 'partials/careteams.html'
+>>>>>>> SananBranch
 			})
 			.when('/invitations',{
 			controller:'',
-			templateUrl: 'Partials/invitations.html'
+			templateUrl: 'partials/invitations.html'
 			})
 			.when('/providers',{
 			controller:'',
-			templateUrl: 'Partials/providers.html'
+			templateUrl: 'partials/providers.html'
 			})
-			.otherwise({redirectTo: 'Partials/home.html'});
+            .when('/patientpage',{
+                controllers:'',
+                templateUrl: 'partials/patientpage.html'
+            })
+			.otherwise({redirectTo: 'partials/home.html'});
 		
 		});
