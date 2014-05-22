@@ -14,30 +14,29 @@ controllers.existingPatientsCtrl = function ($scope) {
  
   $scope.street = "";
   $scope.city = "";
-  $scope.street = "";
+  $scope.state = "";
   $scope.zip = "";
    $scope.list = [];
    
   $scope.submit = function() {
 		{
-			$scope.list.push(this.street);
-			$scope.list.push(this.city);
-			$scope.list.push(this.state);
-			$scope.list.push(this.zip);
+			$scope.list.push({'street':this.street,'city':this.city,'state':this.state,'zip':this.zip});
 		}
 	};
 };
 
 controllers.periopCtrl = function ($scope) {
+  $scope.date="";
   $scope.ear="";
   $scope.procTreated="";
   $scope.procNonTreated="";
   $scope.treatment=[];
   $scope.submit = function() {
-	if($scope.ear && $scope.procTreated && $scope.procNonTreated)	{
-			$scope.treatment.push(this.ear);
-			$scope.treatment.push(this.procTreated);
-			$scope.treatment.push(this.procNonTreated);
+	if($scope.date && $scope.ear && $scope.procTreated && $scope.procNonTreated)	{
+			$scope.treatment.push({'Date of Implantation': this.date, 
+			'ear':this.ear, 
+			'procedureForTreated':this.procTreated, 
+			'procedureForNontreated':this.procNonTreated});
 		}
 	};
 };
@@ -49,12 +48,22 @@ controllers.candidacyCtrl = function ($scope) {
   $scope.testValues=[];
   $scope.submit = function() {
 		{
-			$scope.testValues.push(this.pta);
-			$scope.testValues.push(this.srt);
-			$scope.testValues.push(this.sds);
+			$scope.testValues.push({'pta':this.pta,'srt':this.srt,'sds':this.sds});
 		}
 	};
 };
+
+controllers.audioTestCtrl = function ($scope){
+  $scope.pta="";
+  $scope.srt="";
+  $scope.sds="";
+  $scope.testValues=[];
+  $scope.submit = function() {
+	if($scope.pta && $scope.srt && $scope.sds)	{
+			$scope.testValues.push({'pta':this.pta,'srt':this.srt,'sds':this.sds});
+		}
+	};
+}
 
 myApp.controller(controllers);
 })();
